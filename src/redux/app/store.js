@@ -1,3 +1,3 @@
 import { configureStore } from "@reduxjs/toolkit";
-const firstReducer = (state = [], action) => {};
-export const store = configureStore({ reducer: { first: firstReducer } });
+import { testSlice } from "../fetures/testSlice";
+// export const store = configureStore({ reducer: { first: testSlice } });
