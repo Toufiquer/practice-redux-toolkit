@@ -17,6 +17,6 @@ export const store = configureStore({
     selectedTags: selectedTagsSlice,
     search: searchSlice,
   },
-  // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+  // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(),
 });
