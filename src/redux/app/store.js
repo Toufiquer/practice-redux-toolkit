@@ -5,6 +5,6 @@ import videoSlice from "../features/videos/videoSlice";
 const logger = createLogger();
 
 export const store = configureStore({
-  reducer: { videos: videoSlice, tag: tagsSlice },
+  reducer: { videos: videoSlice, tags: tagsSlice },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
