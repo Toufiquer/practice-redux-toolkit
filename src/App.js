@@ -8,7 +8,6 @@ import { fetchVideos } from "./redux/features/videos/VideoSlice";
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log(fetchVideos(), " => Line No: 11");
     dispatch(fetchVideos());
   }, [dispatch]);
   return (
