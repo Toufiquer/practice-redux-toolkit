@@ -12,7 +12,6 @@ const Tag = ({ title }) => {
   const index = tags.indexOf(title);
 
   const handleTags = (tag) => {
-    console.log(index, " => Line No: 15");
     if (index !== -1) {
       dispatch(removeTag(tag));
     } else {

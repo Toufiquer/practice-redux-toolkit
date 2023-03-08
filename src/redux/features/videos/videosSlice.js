@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { useSelector } from "react-redux";
 
 import { videosAPI } from "./videosAPI";
 const initialState = {
@@ -8,13 +9,13 @@ const initialState = {
   error: false,
 };
 
-export const fetchVideos = createAsyncThunk("videos/fetchVideos", async () => {
-  //   const fetchData = await fetch("http://localhost:9000/videos");
-  //   const data = await fetchData.json();
-
-  const data = await videosAPI();
-  return data;
-});
+export const fetchVideos = createAsyncThunk(
+  "videos/fetchVideos",
+  async ({ tags, searchText }) => {
+    const data = await videosAPI({ tags, searchText });
+    return data;
+  }
+);
 
 const videosSlice = createSlice({
   name: "video",

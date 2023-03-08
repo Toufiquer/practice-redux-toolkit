@@ -1,15 +1,20 @@
 import React from "react";
 import logoImg from "../../components/assets/lws.svg";
 import searchImg from "../../components/assets/search.svg";
-import { Link } from "react-router-dom";
+import { Link, useMatch, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addSearch } from "../../redux/features/search/searchSlice";
 const Nav = () => {
   const [text, setText] = React.useState("");
   const dispatch = useDispatch();
+  const match = useMatch("/");
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(addSearch(text));
+    if (!match) {
+      navigate("/");
+    }
   };
   return (
     <>

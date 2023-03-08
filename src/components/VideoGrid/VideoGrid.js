@@ -4,9 +4,12 @@ import { fetchVideos } from "../../redux/features/videos/videosSlice";
 import VideoItem from "./VideoItem";
 const VideoGrid = () => {
   const dispatch = useDispatch();
+  const { searchText } = useSelector((state) => state.search);
+  const { tags } = useSelector((state) => state.selectedTags);
+
   useEffect(() => {
-    dispatch(fetchVideos());
-  }, [dispatch]);
+    dispatch(fetchVideos({ tags, searchText }));
+  }, [dispatch, tags, searchText]);
   const { videos, isLoading, isError, error } = useSelector(
     (state) => state.videos
   );
