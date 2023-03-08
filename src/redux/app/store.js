@@ -1,3 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { testSlice } from "../fetures/testSlice";
-// export const store = configureStore({ reducer: { first: testSlice } });
+import { createLogger } from "redux-logger";
+import VideoSlice from "../features/videos/VideoSlice";
+const logger = createLogger();
+
+export const store = configureStore({
+  reducer: { videos: VideoSlice },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+});
