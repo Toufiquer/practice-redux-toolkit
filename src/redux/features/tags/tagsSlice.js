@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getTags } from "../../api/getTags";
+
+import { tagsAPI } from "./tagsAPI";
 const initialState = {
   tags: [],
   isLoading: false,
@@ -11,7 +12,7 @@ export const fetchTags = createAsyncThunk("tags/fetchTags", async () => {
   //   const fetchData = await fetch("http://localhost:9000/tags");
   //   const data = await fetchData.json();
 
-  const data = await getTags();
+  const data = await tagsAPI();
   return data;
 });
 
