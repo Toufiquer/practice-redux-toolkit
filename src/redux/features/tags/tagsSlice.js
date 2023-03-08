@@ -17,7 +17,7 @@ export const fetchTags = createAsyncThunk("tags/fetchTags", async () => {
 });
 
 const tagsSlice = createSlice({
-  name: "video",
+  name: "tags",
   initialState,
   extraReducers: (builder) => {
     builder
