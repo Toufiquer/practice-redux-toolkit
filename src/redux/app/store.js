@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { createLogger } from "redux-logger";
-import VideoSlice from "../features/videos/VideoSlice";
+import tagsSlice from "../features/tags/tagsSlice";
+import videoSlice from "../features/videos/videoSlice";
 const logger = createLogger();
 
 export const store = configureStore({
-  reducer: { videos: VideoSlice },
+  reducer: { videos: videoSlice, tag: tagsSlice },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });

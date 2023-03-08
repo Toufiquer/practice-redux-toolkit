@@ -4,11 +4,13 @@ import Home from "./page/Home";
 import { Routes, Route } from "react-router-dom";
 import Video from "./page/Video";
 import { useDispatch } from "react-redux";
-import { fetchVideos } from "./redux/features/videos/VideoSlice";
+import { fetchVideos } from "./redux/features/videos/videoSlice";
+import { fetchTags } from "./redux/features/tags/tagsSlice";
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchVideos());
+    dispatch(fetchTags());
   }, [dispatch]);
   return (
     <>
