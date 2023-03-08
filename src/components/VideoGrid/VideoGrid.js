@@ -1,7 +1,12 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchVideos } from "../../redux/features/videos/videosSlice";
 import VideoItem from "./VideoItem";
 const VideoGrid = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchVideos());
+  }, [dispatch]);
   const { videos, isLoading, isError, error } = useSelector(
     (state) => state.videos
   );

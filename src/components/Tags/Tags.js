@@ -1,10 +1,15 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchTags } from "../../redux/features/tags/tagsSlice";
 import Tag from "./Tag";
 
 const Tags = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchTags());
+  }, [dispatch]);
   const { tags } = useSelector((state) => state.tags);
-  console.log(tags, " => Line No: 6");
+
   return tags?.length > 0 ? (
     <>
       <section>
