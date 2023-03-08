@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const RelatedVideoItem = ({ video = {} }) => {
-  const { id, date, author, views, title, thumbnail, duration } = video;
+  const {  date, author, views, title, thumbnail, duration } = video;
   console.log(video, " => Line No: 6");
   return (
     <>
